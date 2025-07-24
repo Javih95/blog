@@ -1,0 +1,43 @@
+.blog-footer {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px 40px;
+  border-top: 3px solid #61dafb;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.social-icons a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #61dafb;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

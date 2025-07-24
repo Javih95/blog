@@ -8,11 +8,11 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
-
+  const [coverImage, setCoverImage] = useState('');
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newPost = { title, content, author };
+    const newPost = { title, content, coverImage, author };
 
     try {
       const res = await fetch('http://localhost:5000/posts', {
@@ -54,6 +54,14 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
           value={content}
           onChange={e => setContent(e.target.value)}
           required
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="URL de imagen de portada"
+          value={coverImage}
+          onChange={e => setCoverImage(e.target.value)}
         />
       </div>
       <div>

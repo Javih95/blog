@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
-import PostList from './components/PostList';
-import PostForm from './components/PostForm';
-
-const App: React.FC = () => {
-  const [reloadPosts, setReloadPosts] = useState(false);
-
-  const handlePostCreated = () => {
-    setReloadPosts(prev => !prev); // fuerza recarga
-  };
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/footer';
+import Home from './pages/home';
+import CreatePost from './pages/nuevoPost';
+import Post from './components/Post';
+import './App.css';
+function App() {
   return (
-    <div>
-      <h1>Mi Blog Personal</h1>
-      <PostForm onPostCreated={handlePostCreated} />
-      <PostList key={reloadPosts ? 'reload' : 'normal'} />
-    </div>
+    <Router>
+      <Header />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/crear" element={<CreatePost />} />
+          <Route path="/post/:id" element={<Post/>} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
-};
+}
 
 export default App;
+
