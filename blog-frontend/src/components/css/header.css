@@ -1,14 +1,12 @@
-.blog-header {
+.header {
   background-color: #1e1e1e;
   color: white;
-  padding: 20px 40px;
   border-bottom: 3px solid #61dafb;
 }
 
 .header-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .logo-title {
@@ -18,7 +16,7 @@
 }
 
 .logo-area {
-  width: 60px;
+  width: 120px;
   height: auto;
 }
 
@@ -46,6 +44,7 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  margin-right: 1rem;
 }
 
 .nav-menu a:hover {

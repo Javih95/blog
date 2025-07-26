@@ -1,8 +1,8 @@
-.blog-footer {
+.footer {
   background-color: #1e1e1e;
   color: white;
-  padding: 20px 40px;
   border-top: 3px solid #61dafb;
+  padding-top: 16px;
 }
 
 .footer-content {

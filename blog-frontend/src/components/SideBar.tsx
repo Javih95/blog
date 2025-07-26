@@ -12,11 +12,11 @@ const FeaturedPostsBar = () => {
         .catch(err => console.error(err));
     }, []);
   return (
-    <aside className="featured-sidebar">
+    <aside className="sidebar">
       <h3>Destacados</h3>
       <ul>
         {posts.map((post) => (
-          <li key={post._id}>
+          <li key={post._id} className="sidebar-post">
             <Link to={`/post/${post._id}`}>{post.title}</Link>
           </li>
         ))}

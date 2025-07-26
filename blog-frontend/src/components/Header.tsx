@@ -2,7 +2,7 @@ import './css/header.css';
 import { Link } from 'react-router-dom';
 function Header() {
   return (
-    <header className="blog-header">
+    <header className="header">
       <div className="header-container">
         <div className="logo-title">
           <img src="/public/logo.png" alt="Logo de Javih" className="logo-area" />

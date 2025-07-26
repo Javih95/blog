@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { PostType } from '../types/Post';
-
+import '../components/css/post.css';
 const Post = () => {
   const { id } = useParams();
   const [post, setPost] = useState<PostType | null>(null);
@@ -16,7 +16,7 @@ const Post = () => {
   if (!post) return <p>Cargando post...</p>;
 
   return (
-    <article>
+    <article className='post'>
       <h2>{post.title}</h2>
       <p>{post.content}</p>
       {post.coverImage && (<img src={post.coverImage} alt={post.title} className="post-cover" />)}

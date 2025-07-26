@@ -8,8 +8,9 @@ import SideBar from './components/SideBar';
 import './App.css';
 function App() {
   return (
+    <div className="app-layout">
     <Router>
-      <Header />
+      <Header  />
       <SideBar />
       <main className="main-content">
         <Routes>
@@ -20,6 +21,7 @@ function App() {
       </main>
       <Footer />
     </Router>
+        </div>
   );
 }
 
