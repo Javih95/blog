@@ -5,7 +5,7 @@ function Header() {
     <header className="blog-header">
       <div className="header-container">
         <div className="logo-title">
-          <img src="logo.png" alt="Logo de Javih" className="logo-area" />
+          <img src="/public/logo.png" alt="Logo de Javih" className="logo-area" />
           <div>
             <h1 className="blog-title">Javih.Blog</h1>
             <p className="subtitle">Reflexiones sobre cultura tecnológica y GameDev</p>
