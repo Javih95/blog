@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface PostFormProps {
-  onPostCreated?: () => void; // callback opcional para recargar la lista
+  onPostCreated?: () => void; 
 }
 
 const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
@@ -9,10 +9,11 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
   const [coverImage, setCoverImage] = useState('');
+  const [destacado, setDestacado] = useState(false);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newPost = { title, content, coverImage, author };
+    const newPost = { title, content, coverImage, author,destacado };
 
     try {
       const res = await fetch('http://localhost:5000/posts', {
@@ -25,6 +26,7 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
         setTitle('');
         setContent('');
         setAuthor('');
+        setDestacado(false);
         if (onPostCreated) onPostCreated();
         alert('Post creado con éxito');
       } else {
@@ -71,6 +73,14 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
           value={author}
           onChange={e => setAuthor(e.target.value)}
           required
+        />
+      </div>
+      <div>
+        <label>Destacar?:</label><br />
+        <input
+          type="checkbox"
+          checked={destacado}
+          onChange={e => setDestacado(e.target.checked)}
         />
       </div>
       <button type="submit">Crear post</button>

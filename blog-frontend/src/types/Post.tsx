@@ -6,4 +6,5 @@ export interface PostType {
     author: string;
     coverImage?: string;
     tags?: string[];
+    destacado?: boolean;
 }

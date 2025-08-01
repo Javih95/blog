@@ -6,7 +6,7 @@ const FeaturedPostsBar = () => {
    const [posts, setPosts] = useState<PostType[]>([]);
   
     useEffect(() => {
-      fetch('http://localhost:5000/posts')
+      fetch('http://localhost:5000/posts/destacados')
         .then(res => res.json())
         .then((data: PostType[]) => setPosts(data))
         .catch(err => console.error(err));

@@ -5,10 +5,11 @@
 }
 
 .post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
+
 
 .post-card {
   display: block;
@@ -40,7 +41,7 @@
   color: #888;
 }
 .post-card img.post-cover {
-  width: 100%;
+  width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 8px;
